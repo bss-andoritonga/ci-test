@@ -1,5 +1,5 @@
 # Use the official PHP image as the base image
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # Install necessary extensions and dependencies
