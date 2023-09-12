@@ -7,6 +7,8 @@ RUN apt-get update && \
     libzip-dev \
     && docker-php-ext-install zip
 
+RUN composer install
+
 # Set the working directory
 WORKDIR /var/www/html
 
