@@ -13,7 +13,7 @@ WORKDIR /var/www/html
 # Copy your CodeIgniter application files to the container
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-intl
 # Install Composer dependencies (if you use Composer for CodeIgniter)
 # RUN composer install --no-dev --optimize-autoloader
 
