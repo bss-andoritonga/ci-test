@@ -7,15 +7,13 @@ RUN apt-get update && \
     apt-get install -y \
     libzip-dev \
     && docker-php-ext-install zip
-
-RUN composer install
-
 # Set the working directory
 WORKDIR /var/www/html
 
 # Copy your CodeIgniter application files to the container
 COPY . .
 
+RUN composer install --no-dev --optimize-autoloader
 # Install Composer dependencies (if you use Composer for CodeIgniter)
 # RUN composer install --no-dev --optimize-autoloader
 
